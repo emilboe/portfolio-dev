@@ -31,7 +31,6 @@ const LinkItem = ({ href, path, children }) => {
             </Link>
         </NextLink>
     )
-
 }
 
 const Navbar = props => {
@@ -46,7 +45,6 @@ const Navbar = props => {
             zIndex={1}
             {...props}
         >
-
             <Container
                 display='flex'
                 p={2}
@@ -55,7 +53,40 @@ const Navbar = props => {
                 align='center'
                 justify='space-between'
             >
+                <Flex align="center" mr={5} >
+                    <Heading as="h1" size="lg" letterSpacing={'tight'}>
+                        <Logo></Logo>
+                    </Heading>
+                </Flex>
+                <Stack
+                    direction={{ base: 'column', md: 'row' }}
+                    display={{ base: 'none', md: 'flex' }}
+                    width={{ base: 'full', md: 'auto' }}
+                    alignItems="center"
+                    flexGrow={1}
+                    mt={{ base: 4, nmd: 0 }}
+                >
 
+                    <LinkItem href="/works">Works</LinkItem>
+                    <LinkItem href="/works">About me</LinkItem>
+                </Stack>
+
+                <Box flex={1} align="right">
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                        <Menu>
+                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options"></MenuButton>
+                            <MenuList>
+                                <NextLink href="/" passHref>
+                                    <MenuItem as={Link}>About</MenuItem>
+                                </NextLink>
+                                <NextLink href="/works" passHref>
+                                    <MenuItem as={Link}>Works</MenuItem>
+                                </NextLink>
+
+                            </MenuList>
+                        </Menu>
+                    </Box>
+                </Box>
             </Container>
         </Box>
     )

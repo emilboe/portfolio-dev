@@ -19,19 +19,20 @@ padding: 10px;
 `
 
 const Logo = () => {
-    const footPrintImg = `/images/footprints${useColorModeValue('', '-dark')}.png `
+    const logoImg = `/images/${useColorModeValue('logoDark', 'logoWhite')}.png `
+    console.log(logoImg)
     return (
         <Link href="/">
             <a>
                 <LogoBox>
-                    <Image src={footPrintImg} width={20} height={20} alt="logo" />
+                    <Image src={logoImg} width={20} height={20} alt="logo" />
                     <Text
-                        color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                        color={useColorModeValue('black', 'gray.800')}
                         fontFamiy='M PLUS Rounded 1c'
                         fontWeight='bold'
                         ml={3}
                     >
-                        It's me
+                        Emil Bøen
                     </Text>
                 </LogoBox>
             </a>
